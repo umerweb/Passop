@@ -17,7 +17,7 @@ const dbname = 'passop';
 const app = express()
 app.use(cors())
 app.use(bodyParser.json())
-const port = 3000
+const port = process.env.port
 
 client.connect();
 
