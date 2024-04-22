@@ -13,7 +13,7 @@ const manager = () => {
 
 
 const loadPasswords =  async()=>{
-   let req =  await fetch('http://localhost:3000/')
+   let req =  await fetch('https://passop-90wg.onrender.com/')
    let passwords = await req.json()
    setPasswordArray(passwords)
    console.log(passwords)
@@ -70,7 +70,7 @@ const loadPasswords =  async()=>{
 
 
 
-   await fetch("http://localhost:3000/", {method:"POST", headers: {"Content-Type":"application/json"}, body: JSON.stringify({...form, id: uuidv4()})})
+   await fetch("https://passop-90wg.onrender.com//", {method:"POST", headers: {"Content-Type":"application/json"}, body: JSON.stringify({...form, id: uuidv4()})})
     setform({ url: "", username: "", password: "" })
     toast('Password Saved!', {
       position: "top-right",
@@ -90,7 +90,7 @@ const loadPasswords =  async()=>{
     console.log("deleting password with id ", id)
     setPasswordArray(passwordArray.filter(item=>item.id!==id))
    // localStorage.setItem("passwords",JSON.stringify(passwordArray.filter(item=>item.id!==id)))
-   let res = await fetch("http://localhost:3000/", {method:"DELETE", headers: {"Content-Type":"application/json"}, body: JSON.stringify({ id})})
+   let res = await fetch("https://passop-90wg.onrender.com/", {method:"DELETE", headers: {"Content-Type":"application/json"}, body: JSON.stringify({ id})})
     toast('Password Deleted!', {
       position: "top-right",
       autoClose: 5000,
